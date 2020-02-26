@@ -1,22 +1,34 @@
 require 'pp'
 
-def pigeon_hash(data)
+def name_list(data)
   list = {}
   data.each do |key,value|
     value.each do |k,v|
       v.each do |name|
-        if list[name][key]
-          list[name][key] << k.to_s
-        else
-          list[name] = {key => [k.to_s]}
-        end
-        pp list
+        list[name] = {}
       end
     end
   end
+list
 end
 
 
 def nyc_pigeon_organizer(data)
-  pigeon_hash(data)
+  list = name_list(data)
+  new_list = {}
+  data.each do |key,value|
+    value.each do |k,v|
+      list.each do |pigeon,data|
+        arr = []
+        if v.include?(pigeon)
+          p "I have found #{pigeon} in this array with this key:value"
+          pp k,v
+          p "The array they should be returning is this simplified"
+          pp arr << k.to_s
+          new_list[pigeon] = {key => arr}
+        end
+
+      end
+    end
+  end
 end
