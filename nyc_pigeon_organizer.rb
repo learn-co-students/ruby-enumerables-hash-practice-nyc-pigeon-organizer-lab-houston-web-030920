@@ -10,12 +10,23 @@ def nyc_pigeon_organizer(data)
     inner_hash[key] = []
   end 
   
-  binding.pry
+  # get all names from gender in data into an aoa
+  name_array = []
+  data[:gender].each do |gender_key, gender_key_value|
+    name_array << gender_key_value
+  end
   
-  data[:color].reduce do ||
-    
-    
+  #flatten name_array aoa
+  name_array_flatten = name_array.flatten
+  
+  # set up pigeon_list with keys and values
+  name_array_flatten.each do |name_key|
+    pigeon_list[name_key] = inner_hash
   end 
+  
+  
+  
+  
   
   pigeon_list
 end
