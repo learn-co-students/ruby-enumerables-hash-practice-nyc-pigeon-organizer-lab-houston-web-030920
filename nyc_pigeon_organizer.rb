@@ -24,8 +24,20 @@ def nyc_pigeon_organizer(data)
     pigeon_list[name_key] = inner_hash
   end 
   
+  male = data[:gender][:male]
+  female = data[:gender][:female]
   
+  pigeon_list.each do |key, value|
+    if female.include? key
+      pigeon_list[key][:gender] << "female"
+      break
+    else
+      pigeon_list[key][:gender] << "male"
+      break
+    end
+  end
   
+  binding.pry
   
   
   pigeon_list
