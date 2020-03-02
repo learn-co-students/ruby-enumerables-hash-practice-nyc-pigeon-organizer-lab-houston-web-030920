@@ -27,18 +27,12 @@ def nyc_pigeon_organizer(data)
   male = data[:gender][:male]
   female = data[:gender][:female]
   
-  pigeon_list.each do |key, value|
-    if female.include? key
-      pigeon_list[key][:gender] << "female"
-      break
-    else
-      pigeon_list[key][:gender] << "male"
-      break
-    end
-  end
-  
-  binding.pry
-  
+  # pigeon_list.map do |k,v|
+  #   if !male.include? k 
+  #     pigeon_list[k][:gender].push("male")
+  #     break
+  #   end
+  # end
   
   pigeon_list
 end
