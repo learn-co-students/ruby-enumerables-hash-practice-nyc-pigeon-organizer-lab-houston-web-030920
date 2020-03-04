@@ -34,7 +34,7 @@ end
 def nyc_pigeon_organizer(data)
   male = data[:gender][:male]
   female = data[:gender][:female]
-  #all = [male, female].flatten
+  all = [male, female].flatten
   name = {}
   i=0 
   while i<all.count do 
